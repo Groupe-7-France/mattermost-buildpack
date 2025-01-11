@@ -4,10 +4,9 @@ echo "start.sh"
 
 /app/mattermost/bin/run
 
-NEXT_WAIT_TIME=0
-COMMAND_STATUS=1
-until [ $COMMAND_STATUS -eq 0 || $NEXT_WAIT_TIME -eq 4 ]; do
+for i in 1 2 3 4 5
+do
+  echo "Looping ... number $i"
   curl get https://chat.ospharm.ph.fr:${PORT}/api/v4/system/ping
-  sleep $NEXT_WAIT_TIME
-  let NEXT_WAIT_TIME=NEXT_WAIT_TIME+1
+  sleep 10
 done
