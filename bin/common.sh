@@ -131,6 +131,7 @@ function fetch_mattermost_dist() {
   local version="$1"
   local location="$2"
   local edition="$3"
+  local dist="mattermost"
   if [[ $edition == "team" ]]; then
     dist="${dist}-${edition}"  
   fi
