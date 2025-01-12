@@ -131,11 +131,11 @@ function fetch_mattermost_dist() {
   local version="$1"
   local location="$2"
   local edition="$3"
-  local dist="mattermost-team-linux-amd64.tar.gz"
   if [[ $edition == "team" ]]; then
     dist="${dist}-${edition}"  
   fi
   dist="${dist}-${version}-linux-amd64.tar.gz"
+  local dist="mattermost-team-linux-amd64.tar.gz"
 #  local dist_url="https://releases.mattermost.com/${version}/${dist}"
   local dist_url="https://seven-cdn.s3.eu-west-3.amazonaws.com/mattermost/mattermost-team-linux-amd64.tar.gz";
   if [ -f "${CACHE_DIR}/dist/${dist}" ]; then
@@ -143,5 +143,7 @@ function fetch_mattermost_dist() {
   else
     ${CURL} -o "${CACHE_DIR}/dist/${dist}" "${dist_url}"
   fi
-  tar xzf "$CACHE_DIR/dist/${dist}" -C "$location"
+  cd  ${CACHE_DIR}/dist/${dist}
+  ls
+  #tar xzf "$CACHE_DIR/dist/${dist}" -C "$location"
 }
