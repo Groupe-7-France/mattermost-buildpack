@@ -136,7 +136,8 @@ function fetch_mattermost_dist() {
     dist="${dist}-${edition}"  
   fi
   dist="${dist}-${version}-linux-amd64.tar.gz"
-  local dist_url="https://releases.mattermost.com/${version}/${dist}"
+#  local dist_url="https://releases.mattermost.com/${version}/${dist}"
+  local dist_url="https://seven-cdn.s3.eu-west-3.amazonaws.com/mattermost/mattermost-team-linux-amd64.tar.gz";
   if [ -f "${CACHE_DIR}/dist/${dist}" ]; then
     info "File is already downloaded"
   else
