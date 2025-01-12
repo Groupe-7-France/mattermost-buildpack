@@ -131,7 +131,7 @@ function fetch_mattermost_dist() {
   local version="$1"
   local location="$2"
   local edition="$3"
-  local dist="mattermost"
+  local dist="mattermost-team-linux-amd64.tar.gz"
   if [[ $edition == "team" ]]; then
     dist="${dist}-${edition}"  
   fi
