@@ -146,5 +146,6 @@ function fetch_mattermost_dist() {
   fi
   cd /tmp/cache/dist
   ls
+  info $location
   tar xzf "$CACHE_DIR/dist/${dist}" -C "$location"
 }
