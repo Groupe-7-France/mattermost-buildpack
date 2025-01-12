@@ -143,7 +143,7 @@ function fetch_mattermost_dist() {
   else
     ${CURL} -o "${CACHE_DIR}/dist/${dist}" "${dist_url}"
   fi
-  cd  ${CACHE_DIR}/dist/${dist}
+  cd /tmp/cache/dist
   ls
   #tar xzf "$CACHE_DIR/dist/${dist}" -C "$location"
 }
